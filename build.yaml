@@ -1,0 +1,22 @@
+targets:
+  $default:
+    builders:
+      freezed:
+        generate_for:
+          - "lib/**_usecase.dart"
+          - "lib/**_entity.dart"
+          - "lib/**_model.dart"
+          - "lib/**_form.dart"
+          - "lib/**_type.dart"
+          - "lib/**/maybe.dart"
+          - "lib/**/form_field.dart"
+          - "lib/**/result.dart"
+          - "lib/**/request_status.dart"
+          - "lib/**/environment.dart"
+          - "lib/**/product.dart"
+      json_serializable:
+        generate_for:
+          - "lib/**_entity.dart"
+      auto_route_generator:
+        generate_for:
+          - "lib/**/app_router.dart"
