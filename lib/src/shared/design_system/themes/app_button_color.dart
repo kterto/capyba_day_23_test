@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base/src/shared/design_system/tokens/color_tokens.dart';
+import 'package:capyba_day_twenty_three_test/src/shared/design_system/tokens/color_tokens.dart';
 
 @immutable
 class AppButtonColor {
@@ -9,7 +9,6 @@ class AppButtonColor {
   final Color focusedForeround;
   final Color disabledBackground;
   final Color disabledForeround;
-
   const AppButtonColor(
     this.base, {
     this.foreground = ColorTokens.neutralLightest,
@@ -18,7 +17,6 @@ class AppButtonColor {
     this.disabledBackground = ColorTokens.neutralMediumDark,
     this.disabledForeround = ColorTokens.neutralLightest,
   });
-
   static const AppButtonColor primary = AppButtonColor(
     ColorTokens.neutralMediumDark,
     disabledBackground: ColorTokens.neutral,
@@ -27,7 +25,6 @@ class AppButtonColor {
     focusedForeround: ColorTokens.neutralMediumDark,
     foreground: ColorTokens.neutralLightest,
   );
-
   static const AppButtonColor outline = AppButtonColor(
     ColorTokens.neutralLightest,
     disabledBackground: ColorTokens.neutralMediumLight,

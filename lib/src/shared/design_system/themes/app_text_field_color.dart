@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base/src/shared/design_system/tokens/color_tokens.dart';
+import 'package:capyba_day_twenty_three_test/src/shared/design_system/tokens/color_tokens.dart';
 
 @immutable
 class AppTextFieldColor {
@@ -14,7 +14,6 @@ class AppTextFieldColor {
   final Color unfocusedText;
   final Color successBorder;
   final Color errorBorder;
-
   static const regular = AppTextFieldColor(
     placeholder: ColorTokens.neutralLight,
     text: ColorTokens.neutralMediumDark,
@@ -28,7 +27,6 @@ class AppTextFieldColor {
     focusedBorder: ColorTokens.neutral,
     successBorder: ColorTokens.primary,
   );
-
   const AppTextFieldColor({
     this.placeholder = ColorTokens.neutralMediumDark,
     this.text = ColorTokens.neutralDarkest,
