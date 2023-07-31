@@ -23,6 +23,12 @@ abstract class $AppRouter extends _i2.RootStackRouter {
         child: const _i1.CapybaDaySplashScreenWrapper(),
       );
     },
+    CapybaDayAnimatedSplashRouteWrapper.name: (routeData) {
+      return _i2.AutoRoutePage<Never>(
+        routeData: routeData,
+        child: const _i1.CapybaDayAnimatedSplashScreenWrapper(),
+      );
+    },
     SampleSplashRouteWrapper.name: (routeData) {
       return _i2.AutoRoutePage<Never>(
         routeData: routeData,
@@ -60,6 +66,20 @@ class CapybaDaySplashRouteWrapper extends _i2.PageRouteInfo<void> {
         );
 
   static const String name = 'CapybaDaySplashRouteWrapper';
+
+  static const _i2.PageInfo<void> page = _i2.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i1.CapybaDayAnimatedSplashScreenWrapper]
+class CapybaDayAnimatedSplashRouteWrapper extends _i2.PageRouteInfo<void> {
+  const CapybaDayAnimatedSplashRouteWrapper({List<_i2.PageRouteInfo>? children})
+      : super(
+          CapybaDayAnimatedSplashRouteWrapper.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'CapybaDayAnimatedSplashRouteWrapper';
 
   static const _i2.PageInfo<void> page = _i2.PageInfo<void>(name);
 }

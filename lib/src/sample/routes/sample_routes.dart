@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:capyba_day_twenty_three_test/src/router/app_router.gr.dart';
+import 'package:capyba_day_twenty_three_test/src/sample/presentation/dummies/capyba_day_animated_splash_screen.dart';
 import 'package:capyba_day_twenty_three_test/src/sample/presentation/dummies/capyba_day_splash_screen.dart';
 import 'package:capyba_day_twenty_three_test/src/sample/presentation/dummies/sample_home_screen.dart';
 import 'package:capyba_day_twenty_three_test/src/sample/presentation/dummies/sample_login_screen.dart';
@@ -13,6 +14,14 @@ class CapybaDaySplashScreenWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => const CapybaDaySplashScreen();
+}
+
+@RoutePage<Never>()
+class CapybaDayAnimatedSplashScreenWrapper extends StatelessWidget {
+  const CapybaDayAnimatedSplashScreenWrapper({super.key});
+
+  @override
+  Widget build(BuildContext context) => const CapybaDayAnimatedSplashScreen();
 }
 
 @RoutePage<Never>()
@@ -54,6 +63,7 @@ class SampleRoutes {
       initial: true,
       children: [
         AutoRoute(page: CapybaDaySplashRouteWrapper.page),
+        AutoRoute(page: CapybaDayAnimatedSplashRouteWrapper.page),
         AutoRoute(page: SampleLoginRouteWrapper.page),
         AutoRoute(page: SampleHomeRouteWrapper.page),
       ],
