@@ -17,6 +17,12 @@ abstract class $AppRouter extends _i2.RootStackRouter {
 
   @override
   final Map<String, _i2.PageFactory> pagesMap = {
+    CapybaDaySplashRouteWrapper.name: (routeData) {
+      return _i2.AutoRoutePage<Never>(
+        routeData: routeData,
+        child: const _i1.CapybaDaySplashScreenWrapper(),
+      );
+    },
     SampleSplashRouteWrapper.name: (routeData) {
       return _i2.AutoRoutePage<Never>(
         routeData: routeData,
@@ -42,6 +48,20 @@ abstract class $AppRouter extends _i2.RootStackRouter {
       );
     },
   };
+}
+
+/// generated route for
+/// [_i1.CapybaDaySplashScreenWrapper]
+class CapybaDaySplashRouteWrapper extends _i2.PageRouteInfo<void> {
+  const CapybaDaySplashRouteWrapper({List<_i2.PageRouteInfo>? children})
+      : super(
+          CapybaDaySplashRouteWrapper.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'CapybaDaySplashRouteWrapper';
+
+  static const _i2.PageInfo<void> page = _i2.PageInfo<void>(name);
 }
 
 /// generated route for

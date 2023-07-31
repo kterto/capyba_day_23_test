@@ -12,4 +12,10 @@ class ColorTokens {
   static const Color primary = Color(0xFF00E963);
 
   static const Color danger = Color(0xFFE5194C);
+
+  static const Color capybaPink = Color(0xFFE08EE2);
+  static const Color capybaYellow = Color(0xFFE1B44B);
+  static const Color capybaPurple = Color(0xFF797FE8);
+  static const Color capybaGray = Color(0xFF4B4C60);
+  static const Color capybaWhite = Color(0xFFFFFFFF);
 }

@@ -19,7 +19,7 @@ class SampleUsecase extends StateNotifier<SampleState> {
     await Future.delayed(
       const Duration(milliseconds: 2500),
     );
-    state = state.copyWith(flow: const Login());
+    // state = state.copyWith(flow: const Login());
   }
 
   void onEmailChanged(String value) {
