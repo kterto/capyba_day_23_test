@@ -34,7 +34,7 @@ class _CapybaDayAnimatedSplashScreeState
 
   @override
   Widget build(BuildContext context) {
-    // timeDilation = 5.0; // 1.0 is normal animation speed.
+    timeDilation = 5.0; // 1.0 is normal animation speed.
     return SplashStaggeredAnimation(
       controller: _controller.view,
       viewportSize: MediaQuery.of(context).size,
@@ -83,11 +83,16 @@ class SplashStaggeredAnimation extends StatelessWidget {
   Widget _buildAnimation(BuildContext context, Widget? child) {
     return Stack(
       children: [
+        Container(
+          color: ColorTokens.capybaPurple,
+          height: viewportSize.height,
+          width: viewportSize.width,
+        ),
         Column(
           children: [
             Container(
               width: viewportSize.width,
-              height: viewportSize.height / 2,
+              height: grayHeight.value,
               color: ColorTokens.capybaGray,
             ),
             Expanded(
@@ -104,7 +109,7 @@ class SplashStaggeredAnimation extends StatelessWidget {
             ),
             Container(
               width: viewportSize.width,
-              height: 0,
+              height: purpleHeight.value,
               color: Colors.transparent,
             ),
           ],
