@@ -1,3 +1,4 @@
+import 'package:capyba_day_twenty_three_test/src/shared/design_system/assets/capyba_day_twenty_three_test_images.dart';
 import 'package:capyba_day_twenty_three_test/src/shared/design_system/tokens/color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -34,7 +35,7 @@ class _CapybaDayAnimatedSplashScreeState
 
   @override
   Widget build(BuildContext context) {
-    // timeDilation = 5.0; // 1.0 is normal animation speed.
+    timeDilation = 5.0; // 1.0 is normal animation speed.
     return SplashStaggeredAnimation(
       controller: _controller.view,
       viewportSize: MediaQuery.of(context).size,
@@ -68,12 +69,26 @@ class SplashStaggeredAnimation extends StatelessWidget {
               curve: Curves.easeOutSine,
             ),
           ),
+        ),
+        capybaraPadding = EdgeInsetsTween(
+          begin: const EdgeInsets.only(top: 48),
+          end: EdgeInsets.zero,
+        ).animate(
+          CurvedAnimation(
+            parent: controller,
+            curve: const Interval(
+              0.200,
+              0.350,
+              curve: Curves.easeOutSine,
+            ),
+          ),
         );
 
   final Animation<double> controller;
   final Size viewportSize;
   final Animation<double> grayHeight;
   final Animation<double> purpleHeight;
+  final Animation<EdgeInsets> capybaraPadding;
 
   @override
   Widget build(BuildContext context) {
@@ -83,11 +98,39 @@ class SplashStaggeredAnimation extends StatelessWidget {
   Widget _buildAnimation(BuildContext context, Widget? child) {
     return Stack(
       children: [
+        Container(
+          color: ColorTokens.capybaPurple,
+          height: viewportSize.height,
+          width: viewportSize.width,
+          child: SizedBox(
+            width: 308,
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Positioned(
+                  child: Visibility(
+                    visible: false,
+                    child: Center(
+                      child: Padding(
+                        padding: EdgeInsets.zero,
+                        child: Image.asset(
+                          CapybaDayTwentyThreeTestImages.capivara,
+                          width: 184.4,
+                          height: 191.7,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
         Column(
           children: [
             Container(
               width: viewportSize.width,
-              height: viewportSize.height / 2,
+              height: grayHeight.value,
               color: ColorTokens.capybaGray,
             ),
             Expanded(
@@ -104,7 +147,7 @@ class SplashStaggeredAnimation extends StatelessWidget {
             ),
             Container(
               width: viewportSize.width,
-              height: 0,
+              height: purpleHeight.value,
               color: Colors.transparent,
             ),
           ],
