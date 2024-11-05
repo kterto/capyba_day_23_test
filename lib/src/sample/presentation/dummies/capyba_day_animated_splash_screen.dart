@@ -1,7 +1,6 @@
-import 'package:capyba_day_twenty_three_test/src/sample/presentation/widgets/splash_static_stack.dart';
-import 'package:capyba_day_twenty_three_test/src/shared/design_system/assets/capyba_day_twenty_three_test_images.dart';
 import 'package:capyba_day_twenty_three_test/src/shared/design_system/tokens/color_tokens.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 class CapybaDayAnimatedSplashScreen extends StatefulWidget {
   const CapybaDayAnimatedSplashScreen({super.key});
@@ -69,96 +68,12 @@ class SplashStaggeredAnimation extends StatelessWidget {
               curve: Curves.easeOutSine,
             ),
           ),
-        ),
-        capybaraPadding = EdgeInsetsTween(
-          begin: const EdgeInsets.only(top: 48),
-          end: EdgeInsets.zero,
-        ).animate(
-          CurvedAnimation(
-            parent: controller,
-            curve: const Interval(
-              0.200,
-              0.350,
-              curve: Curves.easeOutSine,
-            ),
-          ),
-        ),
-        staticStackOpacity = Tween<double>(
-          begin: 0.0,
-          end: 1.0,
-        ).animate(
-          CurvedAnimation(
-            parent: controller,
-            curve: const Interval(
-              0.720,
-              0.950,
-              curve: Curves.ease,
-            ),
-          ),
-        ),
-        staticStackPadding = EdgeInsetsTween(
-          begin: const EdgeInsets.only(top: 100),
-          end: EdgeInsets.zero,
-        ).animate(
-          CurvedAnimation(
-            parent: controller,
-            curve: const Interval(
-              0.720,
-              0.950,
-              curve: Curves.ease,
-            ),
-          ),
-        ),
-        capybaraSizeFactor = Tween<double>(
-          begin: 1.0,
-          end: 0.48,
-        ).animate(
-          CurvedAnimation(
-            parent: controller,
-            curve: const Interval(
-              0.700,
-              1.000,
-              curve: Curves.ease,
-            ),
-          ),
-        ),
-        capybaraFinalHorizontalPosition = Tween<double>(
-          begin: 61.8,
-          end: 17.3,
-        ).animate(
-          CurvedAnimation(
-            parent: controller,
-            curve: const Interval(
-              0.700,
-              1.000,
-              curve: Curves.ease,
-            ),
-          ),
-        ),
-        capybaraFinalVerticalPosition = Tween<double>(
-          begin: (viewportSize.height - 192.7) / 2,
-          end: (viewportSize.height - (192.7 - 122)) / 2,
-        ).animate(
-          CurvedAnimation(
-            parent: controller,
-            curve: const Interval(
-              0.700,
-              1.000,
-              curve: Curves.ease,
-            ),
-          ),
         );
 
   final Animation<double> controller;
   final Size viewportSize;
   final Animation<double> grayHeight;
   final Animation<double> purpleHeight;
-  final Animation<EdgeInsets> capybaraPadding;
-  final Animation<double> staticStackOpacity;
-  final Animation<EdgeInsets> staticStackPadding;
-  final Animation<double> capybaraSizeFactor;
-  final Animation<double> capybaraFinalHorizontalPosition;
-  final Animation<double> capybaraFinalVerticalPosition;
 
   @override
   Widget build(BuildContext context) {
@@ -168,53 +83,11 @@ class SplashStaggeredAnimation extends StatelessWidget {
   Widget _buildAnimation(BuildContext context, Widget? child) {
     return Stack(
       children: [
-        Container(
-          height: viewportSize.height,
-          width: viewportSize.width,
-          color: ColorTokens.capybaPurple,
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              Opacity(
-                opacity: staticStackOpacity.value,
-                child: Padding(
-                  padding: staticStackPadding.value,
-                  child: const SplashStaticStack(withCapybara: false),
-                ),
-              ),
-              SizedBox(
-                width: 308,
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Positioned(
-                      right: capybaraFinalHorizontalPosition.value,
-                      top: capybaraFinalVerticalPosition.value,
-                      child: Visibility(
-                        visible: controller.value > 0.20,
-                        child: Center(
-                          child: Padding(
-                            padding: capybaraPadding.value,
-                            child: Image.asset(
-                              CapybaDayTwentyThreeTestImages.capivara,
-                              width: 184.4 * capybaraSizeFactor.value,
-                              height: 191.7 * capybaraSizeFactor.value,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
         Column(
           children: [
             Container(
               width: viewportSize.width,
-              height: grayHeight.value,
+              height: viewportSize.height / 2,
               color: ColorTokens.capybaGray,
             ),
             Expanded(
@@ -231,7 +104,7 @@ class SplashStaggeredAnimation extends StatelessWidget {
             ),
             Container(
               width: viewportSize.width,
-              height: purpleHeight.value,
+              height: 0,
               color: Colors.transparent,
             ),
           ],
