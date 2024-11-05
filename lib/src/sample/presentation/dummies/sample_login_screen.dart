@@ -13,9 +13,9 @@ import 'package:capyba_day_twenty_three_test/src/shared/presentation/widgets/fle
 import 'package:capyba_day_twenty_three_test/src/shared/utils/validators.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-@RoutePage<Never>()
+@RoutePage()
 class SampleLoginScreen extends ConsumerStatefulWidget {
-  const SampleLoginScreen({Key? key}) : super(key: key);
+  const SampleLoginScreen({super.key});
   @override
   SampleLoginScreenState createState() => SampleLoginScreenState();
 }

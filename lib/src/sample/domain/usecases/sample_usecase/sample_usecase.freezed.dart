@@ -12,7 +12,7 @@ part of 'sample_usecase.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SampleState {
@@ -21,7 +21,9 @@ mixin _$SampleState {
   RequestStatus<dynamic> get signInRequestStatus =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SampleState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SampleStateCopyWith<SampleState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -52,6 +54,8 @@ class _$SampleStateCopyWithImpl<$Res, $Val extends SampleState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SampleState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -75,6 +79,8 @@ class _$SampleStateCopyWithImpl<$Res, $Val extends SampleState>
     ) as $Val);
   }
 
+  /// Create a copy of SampleState
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SampleFlowCopyWith<$Res> get flow {
@@ -83,6 +89,8 @@ class _$SampleStateCopyWithImpl<$Res, $Val extends SampleState>
     });
   }
 
+  /// Create a copy of SampleState
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SignInFormCopyWith<$Res> get signInForm {
@@ -91,6 +99,8 @@ class _$SampleStateCopyWithImpl<$Res, $Val extends SampleState>
     });
   }
 
+  /// Create a copy of SampleState
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $RequestStatusCopyWith<dynamic, $Res> get signInRequestStatus {
@@ -102,11 +112,11 @@ class _$SampleStateCopyWithImpl<$Res, $Val extends SampleState>
 }
 
 /// @nodoc
-abstract class _$$_SampleStateCopyWith<$Res>
+abstract class _$$SampleStateImplCopyWith<$Res>
     implements $SampleStateCopyWith<$Res> {
-  factory _$$_SampleStateCopyWith(
-          _$_SampleState value, $Res Function(_$_SampleState) then) =
-      __$$_SampleStateCopyWithImpl<$Res>;
+  factory _$$SampleStateImplCopyWith(
+          _$SampleStateImpl value, $Res Function(_$SampleStateImpl) then) =
+      __$$SampleStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -123,13 +133,15 @@ abstract class _$$_SampleStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SampleStateCopyWithImpl<$Res>
-    extends _$SampleStateCopyWithImpl<$Res, _$_SampleState>
-    implements _$$_SampleStateCopyWith<$Res> {
-  __$$_SampleStateCopyWithImpl(
-      _$_SampleState _value, $Res Function(_$_SampleState) _then)
+class __$$SampleStateImplCopyWithImpl<$Res>
+    extends _$SampleStateCopyWithImpl<$Res, _$SampleStateImpl>
+    implements _$$SampleStateImplCopyWith<$Res> {
+  __$$SampleStateImplCopyWithImpl(
+      _$SampleStateImpl _value, $Res Function(_$SampleStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SampleState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -137,7 +149,7 @@ class __$$_SampleStateCopyWithImpl<$Res>
     Object? signInForm = null,
     Object? signInRequestStatus = null,
   }) {
-    return _then(_$_SampleState(
+    return _then(_$SampleStateImpl(
       flow: null == flow
           ? _value.flow
           : flow // ignore: cast_nullable_to_non_nullable
@@ -156,8 +168,8 @@ class __$$_SampleStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SampleState extends _SampleState {
-  const _$_SampleState(
+class _$SampleStateImpl extends _SampleState {
+  const _$SampleStateImpl(
       {required this.flow,
       required this.signInForm,
       required this.signInRequestStatus})
@@ -176,10 +188,10 @@ class _$_SampleState extends _SampleState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SampleState &&
+            other is _$SampleStateImpl &&
             (identical(other.flow, flow) || other.flow == flow) &&
             (identical(other.signInForm, signInForm) ||
                 other.signInForm == signInForm) &&
@@ -191,11 +203,13 @@ class _$_SampleState extends _SampleState {
   int get hashCode =>
       Object.hash(runtimeType, flow, signInForm, signInRequestStatus);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SampleState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SampleStateCopyWith<_$_SampleState> get copyWith =>
-      __$$_SampleStateCopyWithImpl<_$_SampleState>(this, _$identity);
+  _$$SampleStateImplCopyWith<_$SampleStateImpl> get copyWith =>
+      __$$SampleStateImplCopyWithImpl<_$SampleStateImpl>(this, _$identity);
 }
 
 abstract class _SampleState extends SampleState {
@@ -203,7 +217,7 @@ abstract class _SampleState extends SampleState {
           {required final SampleFlow flow,
           required final SignInForm signInForm,
           required final RequestStatus<dynamic> signInRequestStatus}) =
-      _$_SampleState;
+      _$SampleStateImpl;
   const _SampleState._() : super._();
 
   @override
@@ -212,9 +226,12 @@ abstract class _SampleState extends SampleState {
   SignInForm get signInForm;
   @override
   RequestStatus<dynamic> get signInRequestStatus;
+
+  /// Create a copy of SampleState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_SampleStateCopyWith<_$_SampleState> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SampleStateImplCopyWith<_$SampleStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -282,26 +299,34 @@ class _$SampleFlowCopyWithImpl<$Res, $Val extends SampleFlow>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of SampleFlow
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$SplashCopyWith<$Res> {
-  factory _$$SplashCopyWith(_$Splash value, $Res Function(_$Splash) then) =
-      __$$SplashCopyWithImpl<$Res>;
+abstract class _$$SplashImplCopyWith<$Res> {
+  factory _$$SplashImplCopyWith(
+          _$SplashImpl value, $Res Function(_$SplashImpl) then) =
+      __$$SplashImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SplashCopyWithImpl<$Res>
-    extends _$SampleFlowCopyWithImpl<$Res, _$Splash>
-    implements _$$SplashCopyWith<$Res> {
-  __$$SplashCopyWithImpl(_$Splash _value, $Res Function(_$Splash) _then)
+class __$$SplashImplCopyWithImpl<$Res>
+    extends _$SampleFlowCopyWithImpl<$Res, _$SplashImpl>
+    implements _$$SplashImplCopyWith<$Res> {
+  __$$SplashImplCopyWithImpl(
+      _$SplashImpl _value, $Res Function(_$SplashImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of SampleFlow
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$Splash implements Splash {
-  const _$Splash();
+class _$SplashImpl implements Splash {
+  const _$SplashImpl();
 
   @override
   String toString() {
@@ -309,9 +334,9 @@ class _$Splash implements Splash {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Splash);
+        (other.runtimeType == runtimeType && other is _$SplashImpl);
   }
 
   @override
@@ -387,27 +412,32 @@ class _$Splash implements Splash {
 }
 
 abstract class Splash implements SampleFlow {
-  const factory Splash() = _$Splash;
+  const factory Splash() = _$SplashImpl;
 }
 
 /// @nodoc
-abstract class _$$LoginCopyWith<$Res> {
-  factory _$$LoginCopyWith(_$Login value, $Res Function(_$Login) then) =
-      __$$LoginCopyWithImpl<$Res>;
+abstract class _$$LoginImplCopyWith<$Res> {
+  factory _$$LoginImplCopyWith(
+          _$LoginImpl value, $Res Function(_$LoginImpl) then) =
+      __$$LoginImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoginCopyWithImpl<$Res>
-    extends _$SampleFlowCopyWithImpl<$Res, _$Login>
-    implements _$$LoginCopyWith<$Res> {
-  __$$LoginCopyWithImpl(_$Login _value, $Res Function(_$Login) _then)
+class __$$LoginImplCopyWithImpl<$Res>
+    extends _$SampleFlowCopyWithImpl<$Res, _$LoginImpl>
+    implements _$$LoginImplCopyWith<$Res> {
+  __$$LoginImplCopyWithImpl(
+      _$LoginImpl _value, $Res Function(_$LoginImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of SampleFlow
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$Login implements Login {
-  const _$Login();
+class _$LoginImpl implements Login {
+  const _$LoginImpl();
 
   @override
   String toString() {
@@ -415,9 +445,9 @@ class _$Login implements Login {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Login);
+        (other.runtimeType == runtimeType && other is _$LoginImpl);
   }
 
   @override
@@ -493,26 +523,31 @@ class _$Login implements Login {
 }
 
 abstract class Login implements SampleFlow {
-  const factory Login() = _$Login;
+  const factory Login() = _$LoginImpl;
 }
 
 /// @nodoc
-abstract class _$$HomeCopyWith<$Res> {
-  factory _$$HomeCopyWith(_$Home value, $Res Function(_$Home) then) =
-      __$$HomeCopyWithImpl<$Res>;
+abstract class _$$HomeImplCopyWith<$Res> {
+  factory _$$HomeImplCopyWith(
+          _$HomeImpl value, $Res Function(_$HomeImpl) then) =
+      __$$HomeImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$HomeCopyWithImpl<$Res> extends _$SampleFlowCopyWithImpl<$Res, _$Home>
-    implements _$$HomeCopyWith<$Res> {
-  __$$HomeCopyWithImpl(_$Home _value, $Res Function(_$Home) _then)
+class __$$HomeImplCopyWithImpl<$Res>
+    extends _$SampleFlowCopyWithImpl<$Res, _$HomeImpl>
+    implements _$$HomeImplCopyWith<$Res> {
+  __$$HomeImplCopyWithImpl(_$HomeImpl _value, $Res Function(_$HomeImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of SampleFlow
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$Home implements Home {
-  const _$Home();
+class _$HomeImpl implements Home {
+  const _$HomeImpl();
 
   @override
   String toString() {
@@ -520,9 +555,9 @@ class _$Home implements Home {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Home);
+        (other.runtimeType == runtimeType && other is _$HomeImpl);
   }
 
   @override
@@ -598,5 +633,5 @@ class _$Home implements Home {
 }
 
 abstract class Home implements SampleFlow {
-  const factory Home() = _$Home;
+  const factory Home() = _$HomeImpl;
 }

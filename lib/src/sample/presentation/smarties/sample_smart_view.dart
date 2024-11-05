@@ -5,7 +5,7 @@ import 'package:capyba_day_twenty_three_test/src/sample/domain/usecases/sample_u
 import 'package:capyba_day_twenty_three_test/src/sample/sample_providers.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-@RoutePage<Never>(name: 'SampleSmartRoute')
+@RoutePage(name: 'SampleSmartRoute')
 class SampleSmartView extends ConsumerStatefulWidget {
   const SampleSmartView({Key? key}) : super(key: key);
   @override

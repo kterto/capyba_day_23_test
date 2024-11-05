@@ -12,7 +12,7 @@ part of 'api_state_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ApiState {
@@ -89,28 +89,34 @@ class _$ApiStateCopyWithImpl<$Res, $Val extends ApiState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of ApiState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$UnauthenticatedCopyWith<$Res> {
-  factory _$$UnauthenticatedCopyWith(
-          _$Unauthenticated value, $Res Function(_$Unauthenticated) then) =
-      __$$UnauthenticatedCopyWithImpl<$Res>;
+abstract class _$$UnauthenticatedImplCopyWith<$Res> {
+  factory _$$UnauthenticatedImplCopyWith(_$UnauthenticatedImpl value,
+          $Res Function(_$UnauthenticatedImpl) then) =
+      __$$UnauthenticatedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UnauthenticatedCopyWithImpl<$Res>
-    extends _$ApiStateCopyWithImpl<$Res, _$Unauthenticated>
-    implements _$$UnauthenticatedCopyWith<$Res> {
-  __$$UnauthenticatedCopyWithImpl(
-      _$Unauthenticated _value, $Res Function(_$Unauthenticated) _then)
+class __$$UnauthenticatedImplCopyWithImpl<$Res>
+    extends _$ApiStateCopyWithImpl<$Res, _$UnauthenticatedImpl>
+    implements _$$UnauthenticatedImplCopyWith<$Res> {
+  __$$UnauthenticatedImplCopyWithImpl(
+      _$UnauthenticatedImpl _value, $Res Function(_$UnauthenticatedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of ApiState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$Unauthenticated implements Unauthenticated {
-  const _$Unauthenticated();
+class _$UnauthenticatedImpl implements Unauthenticated {
+  const _$UnauthenticatedImpl();
 
   @override
   String toString() {
@@ -118,9 +124,9 @@ class _$Unauthenticated implements Unauthenticated {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Unauthenticated);
+        (other.runtimeType == runtimeType && other is _$UnauthenticatedImpl);
   }
 
   @override
@@ -208,29 +214,32 @@ class _$Unauthenticated implements Unauthenticated {
 }
 
 abstract class Unauthenticated implements ApiState {
-  const factory Unauthenticated() = _$Unauthenticated;
+  const factory Unauthenticated() = _$UnauthenticatedImpl;
 }
 
 /// @nodoc
-abstract class _$$AuthenticatedCopyWith<$Res> {
-  factory _$$AuthenticatedCopyWith(
-          _$Authenticated value, $Res Function(_$Authenticated) then) =
-      __$$AuthenticatedCopyWithImpl<$Res>;
+abstract class _$$AuthenticatedImplCopyWith<$Res> {
+  factory _$$AuthenticatedImplCopyWith(
+          _$AuthenticatedImpl value, $Res Function(_$AuthenticatedImpl) then) =
+      __$$AuthenticatedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$AuthenticatedCopyWithImpl<$Res>
-    extends _$ApiStateCopyWithImpl<$Res, _$Authenticated>
-    implements _$$AuthenticatedCopyWith<$Res> {
-  __$$AuthenticatedCopyWithImpl(
-      _$Authenticated _value, $Res Function(_$Authenticated) _then)
+class __$$AuthenticatedImplCopyWithImpl<$Res>
+    extends _$ApiStateCopyWithImpl<$Res, _$AuthenticatedImpl>
+    implements _$$AuthenticatedImplCopyWith<$Res> {
+  __$$AuthenticatedImplCopyWithImpl(
+      _$AuthenticatedImpl _value, $Res Function(_$AuthenticatedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of ApiState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$Authenticated implements Authenticated {
-  const _$Authenticated();
+class _$AuthenticatedImpl implements Authenticated {
+  const _$AuthenticatedImpl();
 
   @override
   String toString() {
@@ -238,9 +247,9 @@ class _$Authenticated implements Authenticated {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Authenticated);
+        (other.runtimeType == runtimeType && other is _$AuthenticatedImpl);
   }
 
   @override
@@ -328,29 +337,32 @@ class _$Authenticated implements Authenticated {
 }
 
 abstract class Authenticated implements ApiState {
-  const factory Authenticated() = _$Authenticated;
+  const factory Authenticated() = _$AuthenticatedImpl;
 }
 
 /// @nodoc
-abstract class _$$SignedOutCopyWith<$Res> {
-  factory _$$SignedOutCopyWith(
-          _$SignedOut value, $Res Function(_$SignedOut) then) =
-      __$$SignedOutCopyWithImpl<$Res>;
+abstract class _$$SignedOutImplCopyWith<$Res> {
+  factory _$$SignedOutImplCopyWith(
+          _$SignedOutImpl value, $Res Function(_$SignedOutImpl) then) =
+      __$$SignedOutImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SignedOutCopyWithImpl<$Res>
-    extends _$ApiStateCopyWithImpl<$Res, _$SignedOut>
-    implements _$$SignedOutCopyWith<$Res> {
-  __$$SignedOutCopyWithImpl(
-      _$SignedOut _value, $Res Function(_$SignedOut) _then)
+class __$$SignedOutImplCopyWithImpl<$Res>
+    extends _$ApiStateCopyWithImpl<$Res, _$SignedOutImpl>
+    implements _$$SignedOutImplCopyWith<$Res> {
+  __$$SignedOutImplCopyWithImpl(
+      _$SignedOutImpl _value, $Res Function(_$SignedOutImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of ApiState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$SignedOut implements SignedOut {
-  const _$SignedOut();
+class _$SignedOutImpl implements SignedOut {
+  const _$SignedOutImpl();
 
   @override
   String toString() {
@@ -358,9 +370,9 @@ class _$SignedOut implements SignedOut {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SignedOut);
+        (other.runtimeType == runtimeType && other is _$SignedOutImpl);
   }
 
   @override
@@ -448,28 +460,32 @@ class _$SignedOut implements SignedOut {
 }
 
 abstract class SignedOut implements ApiState {
-  const factory SignedOut() = _$SignedOut;
+  const factory SignedOut() = _$SignedOutImpl;
 }
 
 /// @nodoc
-abstract class _$$AuthInitCopyWith<$Res> {
-  factory _$$AuthInitCopyWith(
-          _$AuthInit value, $Res Function(_$AuthInit) then) =
-      __$$AuthInitCopyWithImpl<$Res>;
+abstract class _$$AuthInitImplCopyWith<$Res> {
+  factory _$$AuthInitImplCopyWith(
+          _$AuthInitImpl value, $Res Function(_$AuthInitImpl) then) =
+      __$$AuthInitImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$AuthInitCopyWithImpl<$Res>
-    extends _$ApiStateCopyWithImpl<$Res, _$AuthInit>
-    implements _$$AuthInitCopyWith<$Res> {
-  __$$AuthInitCopyWithImpl(_$AuthInit _value, $Res Function(_$AuthInit) _then)
+class __$$AuthInitImplCopyWithImpl<$Res>
+    extends _$ApiStateCopyWithImpl<$Res, _$AuthInitImpl>
+    implements _$$AuthInitImplCopyWith<$Res> {
+  __$$AuthInitImplCopyWithImpl(
+      _$AuthInitImpl _value, $Res Function(_$AuthInitImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of ApiState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$AuthInit implements AuthInit {
-  const _$AuthInit();
+class _$AuthInitImpl implements AuthInit {
+  const _$AuthInitImpl();
 
   @override
   String toString() {
@@ -477,9 +493,9 @@ class _$AuthInit implements AuthInit {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AuthInit);
+        (other.runtimeType == runtimeType && other is _$AuthInitImpl);
   }
 
   @override
@@ -567,26 +583,31 @@ class _$AuthInit implements AuthInit {
 }
 
 abstract class AuthInit implements ApiState {
-  const factory AuthInit() = _$AuthInit;
+  const factory AuthInit() = _$AuthInitImpl;
 }
 
 /// @nodoc
-abstract class _$$GoneCopyWith<$Res> {
-  factory _$$GoneCopyWith(_$Gone value, $Res Function(_$Gone) then) =
-      __$$GoneCopyWithImpl<$Res>;
+abstract class _$$GoneImplCopyWith<$Res> {
+  factory _$$GoneImplCopyWith(
+          _$GoneImpl value, $Res Function(_$GoneImpl) then) =
+      __$$GoneImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GoneCopyWithImpl<$Res> extends _$ApiStateCopyWithImpl<$Res, _$Gone>
-    implements _$$GoneCopyWith<$Res> {
-  __$$GoneCopyWithImpl(_$Gone _value, $Res Function(_$Gone) _then)
+class __$$GoneImplCopyWithImpl<$Res>
+    extends _$ApiStateCopyWithImpl<$Res, _$GoneImpl>
+    implements _$$GoneImplCopyWith<$Res> {
+  __$$GoneImplCopyWithImpl(_$GoneImpl _value, $Res Function(_$GoneImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of ApiState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$Gone implements Gone {
-  const _$Gone();
+class _$GoneImpl implements Gone {
+  const _$GoneImpl();
 
   @override
   String toString() {
@@ -594,9 +615,9 @@ class _$Gone implements Gone {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Gone);
+        (other.runtimeType == runtimeType && other is _$GoneImpl);
   }
 
   @override
@@ -684,5 +705,5 @@ class _$Gone implements Gone {
 }
 
 abstract class Gone implements ApiState {
-  const factory Gone() = _$Gone;
+  const factory Gone() = _$GoneImpl;
 }

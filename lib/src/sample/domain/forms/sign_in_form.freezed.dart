@@ -12,14 +12,16 @@ part of 'sign_in_form.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SignInForm {
   FormField<String> get email => throw _privateConstructorUsedError;
   FormField<String> get password => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SignInForm
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SignInFormCopyWith<SignInForm> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -46,6 +48,8 @@ class _$SignInFormCopyWithImpl<$Res, $Val extends SignInForm>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SignInForm
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -64,6 +68,8 @@ class _$SignInFormCopyWithImpl<$Res, $Val extends SignInForm>
     ) as $Val);
   }
 
+  /// Create a copy of SignInForm
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $FormFieldCopyWith<String, $Res> get email {
@@ -72,6 +78,8 @@ class _$SignInFormCopyWithImpl<$Res, $Val extends SignInForm>
     });
   }
 
+  /// Create a copy of SignInForm
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $FormFieldCopyWith<String, $Res> get password {
@@ -82,11 +90,11 @@ class _$SignInFormCopyWithImpl<$Res, $Val extends SignInForm>
 }
 
 /// @nodoc
-abstract class _$$_SignInFormCopyWith<$Res>
+abstract class _$$SignInFormImplCopyWith<$Res>
     implements $SignInFormCopyWith<$Res> {
-  factory _$$_SignInFormCopyWith(
-          _$_SignInForm value, $Res Function(_$_SignInForm) then) =
-      __$$_SignInFormCopyWithImpl<$Res>;
+  factory _$$SignInFormImplCopyWith(
+          _$SignInFormImpl value, $Res Function(_$SignInFormImpl) then) =
+      __$$SignInFormImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({FormField<String> email, FormField<String> password});
@@ -98,20 +106,22 @@ abstract class _$$_SignInFormCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SignInFormCopyWithImpl<$Res>
-    extends _$SignInFormCopyWithImpl<$Res, _$_SignInForm>
-    implements _$$_SignInFormCopyWith<$Res> {
-  __$$_SignInFormCopyWithImpl(
-      _$_SignInForm _value, $Res Function(_$_SignInForm) _then)
+class __$$SignInFormImplCopyWithImpl<$Res>
+    extends _$SignInFormCopyWithImpl<$Res, _$SignInFormImpl>
+    implements _$$SignInFormImplCopyWith<$Res> {
+  __$$SignInFormImplCopyWithImpl(
+      _$SignInFormImpl _value, $Res Function(_$SignInFormImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SignInForm
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? email = null,
     Object? password = null,
   }) {
-    return _then(_$_SignInForm(
+    return _then(_$SignInFormImpl(
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -126,8 +136,8 @@ class __$$_SignInFormCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInForm extends _SignInForm {
-  const _$_SignInForm(
+class _$SignInFormImpl extends _SignInForm {
+  const _$SignInFormImpl(
       {this.email = const FormField(name: "email"),
       this.password = const FormField(name: "password")})
       : super._();
@@ -145,10 +155,10 @@ class _$_SignInForm extends _SignInForm {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SignInForm &&
+            other is _$SignInFormImpl &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
                 other.password == password));
@@ -157,25 +167,30 @@ class _$_SignInForm extends _SignInForm {
   @override
   int get hashCode => Object.hash(runtimeType, email, password);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SignInForm
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SignInFormCopyWith<_$_SignInForm> get copyWith =>
-      __$$_SignInFormCopyWithImpl<_$_SignInForm>(this, _$identity);
+  _$$SignInFormImplCopyWith<_$SignInFormImpl> get copyWith =>
+      __$$SignInFormImplCopyWithImpl<_$SignInFormImpl>(this, _$identity);
 }
 
 abstract class _SignInForm extends SignInForm {
   const factory _SignInForm(
       {final FormField<String> email,
-      final FormField<String> password}) = _$_SignInForm;
+      final FormField<String> password}) = _$SignInFormImpl;
   const _SignInForm._() : super._();
 
   @override
   FormField<String> get email;
   @override
   FormField<String> get password;
+
+  /// Create a copy of SignInForm
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_SignInFormCopyWith<_$_SignInForm> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SignInFormImplCopyWith<_$SignInFormImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

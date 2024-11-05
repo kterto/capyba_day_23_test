@@ -7,7 +7,7 @@ import 'package:capyba_day_twenty_three_test/src/shared/design_system/widgets/he
 const Duration _FADE_DURATION = Duration(milliseconds: 1200);
 const Duration _SLIDE_DURATION = Duration(milliseconds: 600);
 
-@RoutePage<Never>()
+@RoutePage()
 class SampleSplashScreen extends StatefulWidget {
   const SampleSplashScreen({Key? key}) : super(key: key);
   @override

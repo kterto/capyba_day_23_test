@@ -2,6 +2,7 @@ import 'package:capyba_day_twenty_three_test/src/sample/presentation/widgets/spl
 import 'package:capyba_day_twenty_three_test/src/shared/design_system/assets/capyba_day_twenty_three_test_images.dart';
 import 'package:capyba_day_twenty_three_test/src/shared/design_system/tokens/color_tokens.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 class CapybaDayAnimatedSplashScreen extends StatefulWidget {
   const CapybaDayAnimatedSplashScreen({super.key});
@@ -35,7 +36,7 @@ class _CapybaDayAnimatedSplashScreeState
 
   @override
   Widget build(BuildContext context) {
-    // timeDilation = 5.0; // 1.0 is normal animation speed.
+    timeDilation = 5.0; // 1.0 is normal animation speed.
     return SplashStaggeredAnimation(
       controller: _controller.view,
       viewportSize: MediaQuery.of(context).size,

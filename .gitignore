@@ -57,3 +57,6 @@ ios/firebase_app_id_file.json
 
 # output untranslated strings
 notTranslatedStrings.txt
+
+# FVM Version Cache
+.fvm/

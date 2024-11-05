@@ -8,7 +8,7 @@ import 'package:capyba_day_twenty_three_test/src/sample/presentation/dummies/sam
 import 'package:capyba_day_twenty_three_test/src/sample/presentation/smarties/sample_smart_view.dart';
 import 'package:flutter/material.dart';
 
-@RoutePage<Never>()
+@RoutePage()
 class CapybaDaySplashScreenWrapper extends StatelessWidget {
   const CapybaDaySplashScreenWrapper({super.key});
 
@@ -16,7 +16,7 @@ class CapybaDaySplashScreenWrapper extends StatelessWidget {
   Widget build(BuildContext context) => const CapybaDaySplashScreen();
 }
 
-@RoutePage<Never>()
+@RoutePage()
 class CapybaDayAnimatedSplashScreenWrapper extends StatelessWidget {
   const CapybaDayAnimatedSplashScreenWrapper({super.key});
 
@@ -24,7 +24,7 @@ class CapybaDayAnimatedSplashScreenWrapper extends StatelessWidget {
   Widget build(BuildContext context) => const CapybaDayAnimatedSplashScreen();
 }
 
-@RoutePage<Never>()
+@RoutePage()
 class SampleSplashScreenWrapper extends StatelessWidget {
   const SampleSplashScreenWrapper({super.key});
 
@@ -32,7 +32,7 @@ class SampleSplashScreenWrapper extends StatelessWidget {
   Widget build(BuildContext context) => const SampleSplashScreen();
 }
 
-@RoutePage<Never>()
+@RoutePage()
 class SampleLoginScreenWrapper extends StatelessWidget {
   const SampleLoginScreenWrapper({super.key});
 
@@ -40,7 +40,7 @@ class SampleLoginScreenWrapper extends StatelessWidget {
   Widget build(BuildContext context) => const SampleLoginScreen();
 }
 
-@RoutePage<Never>()
+@RoutePage()
 class SampleHomeScreenWrapper extends StatelessWidget {
   const SampleHomeScreenWrapper({super.key});
 
@@ -48,7 +48,7 @@ class SampleHomeScreenWrapper extends StatelessWidget {
   Widget build(BuildContext context) => const SampleHomeScreen();
 }
 
-@RoutePage<Never>(name: 'SampleSmartRouteWrapper')
+@RoutePage(name: 'SampleSmartRouteWrapper')
 class SampleSmartViewWrappper extends StatelessWidget {
   const SampleSmartViewWrappper({super.key});
 

@@ -8,9 +8,9 @@ import 'package:capyba_day_twenty_three_test/src/shared/design_system/tokens/spa
 import 'package:capyba_day_twenty_three_test/src/shared/design_system/widgets/buttons/capyba_day_twenty_three_test_outline_button.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-@RoutePage<Never>()
+@RoutePage()
 class SampleHomeScreen extends ConsumerWidget {
-  const SampleHomeScreen({Key? key}) : super(key: key);
+  const SampleHomeScreen({super.key});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
