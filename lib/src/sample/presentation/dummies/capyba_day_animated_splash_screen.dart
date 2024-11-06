@@ -36,7 +36,7 @@ class _CapybaDayAnimatedSplashScreeState
 
   @override
   Widget build(BuildContext context) {
-    // timeDilation = 5.0; // 1.0 is normal animation speed.
+    timeDilation = 5.0; // 1.0 is normal animation speed.
     return SplashStaggeredAnimation(
       controller: _controller.view,
       viewportSize: MediaQuery.of(context).size,
@@ -189,6 +189,8 @@ class SplashStaggeredAnimation extends StatelessWidget {
                   alignment: Alignment.center,
                   children: [
                     Positioned(
+                      top: capybaraFinalVerticalPosition.value,
+                      right: capybaraFinalHorizontalPosition.value,
                       child: Visibility(
                         visible: controller.value > 0.20,
                         child: Center(
@@ -196,8 +198,8 @@ class SplashStaggeredAnimation extends StatelessWidget {
                             padding: capybaraPadding.value,
                             child: Image.asset(
                               CapybaDayTwentyThreeTestImages.capivara,
-                              width: 184.4,
-                              height: 191.7,
+                              width: 184.4 * capybaraSizeFactor.value,
+                              height: 191.7 * capybaraSizeFactor.value,
                             ),
                           ),
                         ),
