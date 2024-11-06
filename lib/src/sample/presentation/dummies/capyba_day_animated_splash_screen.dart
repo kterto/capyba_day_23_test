@@ -109,6 +109,45 @@ class SplashStaggeredAnimation extends StatelessWidget {
               curve: Curves.ease,
             ),
           ),
+        ),
+        capybaraSizeFactor = Tween<double>(
+          begin: 1.0,
+          end: 0.48,
+        ).animate(
+          CurvedAnimation(
+            parent: controller,
+            curve: const Interval(
+              0.700,
+              1.000,
+              curve: Curves.ease,
+            ),
+          ),
+        ),
+        capybaraFinalHorizontalPosition = Tween<double>(
+          begin: 61.8,
+          end: 17.3,
+        ).animate(
+          CurvedAnimation(
+            parent: controller,
+            curve: const Interval(
+              0.700,
+              1.000,
+              curve: Curves.ease,
+            ),
+          ),
+        ),
+        capybaraFinalVerticalPosition = Tween<double>(
+          begin: (viewportSize.height - 192.7) / 2,
+          end: (viewportSize.height - (192.7 - 122)) / 2,
+        ).animate(
+          CurvedAnimation(
+            parent: controller,
+            curve: const Interval(
+              0.700,
+              1.000,
+              curve: Curves.ease,
+            ),
+          ),
         );
 
   final Animation<double> controller;
@@ -118,6 +157,9 @@ class SplashStaggeredAnimation extends StatelessWidget {
   final Animation<EdgeInsets> capybaraPadding;
   final Animation<double> staticStackOpacity;
   final Animation<EdgeInsets> staticStackPadding;
+  final Animation<double> capybaraSizeFactor;
+  final Animation<double> capybaraFinalHorizontalPosition;
+  final Animation<double> capybaraFinalVerticalPosition;
 
   @override
   Widget build(BuildContext context) {
