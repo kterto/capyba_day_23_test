@@ -1,3 +1,4 @@
+import 'package:capyba_day_twenty_three_test/src/sample/presentation/widgets/splash_static_stack.dart';
 import 'package:capyba_day_twenty_three_test/src/shared/design_system/assets/capyba_day_twenty_three_test_images.dart';
 import 'package:capyba_day_twenty_three_test/src/shared/design_system/tokens/color_tokens.dart';
 import 'package:flutter/material.dart';
@@ -82,6 +83,32 @@ class SplashStaggeredAnimation extends StatelessWidget {
               curve: Curves.easeOutSine,
             ),
           ),
+        ),
+        staticStackOpacity = Tween<double>(
+          begin: 0.0,
+          end: 1.0,
+        ).animate(
+          CurvedAnimation(
+            parent: controller,
+            curve: const Interval(
+              0.720,
+              0.950,
+              curve: Curves.ease,
+            ),
+          ),
+        ),
+        staticStackPadding = EdgeInsetsTween(
+          begin: const EdgeInsets.only(top: 100),
+          end: EdgeInsets.zero,
+        ).animate(
+          CurvedAnimation(
+            parent: controller,
+            curve: const Interval(
+              0.720,
+              0.950,
+              curve: Curves.ease,
+            ),
+          ),
         );
 
   final Animation<double> controller;
@@ -89,6 +116,8 @@ class SplashStaggeredAnimation extends StatelessWidget {
   final Animation<double> grayHeight;
   final Animation<double> purpleHeight;
   final Animation<EdgeInsets> capybaraPadding;
+  final Animation<double> staticStackOpacity;
+  final Animation<EdgeInsets> staticStackPadding;
 
   @override
   Widget build(BuildContext context) {
@@ -102,28 +131,40 @@ class SplashStaggeredAnimation extends StatelessWidget {
           color: ColorTokens.capybaPurple,
           height: viewportSize.height,
           width: viewportSize.width,
-          child: SizedBox(
-            width: 308,
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                Positioned(
-                  child: Visibility(
-                    visible: controller.value > 0.20,
-                    child: Center(
-                      child: Padding(
-                        padding: capybaraPadding.value,
-                        child: Image.asset(
-                          CapybaDayTwentyThreeTestImages.capivara,
-                          width: 184.4,
-                          height: 191.7,
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              const Opacity(
+                opacity: 1,
+                child: Padding(
+                  padding: EdgeInsets.zero,
+                  child: SplashStaticStack(withCapybara: false),
+                ),
+              ),
+              SizedBox(
+                width: 308,
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Positioned(
+                      child: Visibility(
+                        visible: controller.value > 0.20,
+                        child: Center(
+                          child: Padding(
+                            padding: capybaraPadding.value,
+                            child: Image.asset(
+                              CapybaDayTwentyThreeTestImages.capivara,
+                              width: 184.4,
+                              height: 191.7,
+                            ),
+                          ),
                         ),
                       ),
                     ),
-                  ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
         Column(
