@@ -134,11 +134,11 @@ class SplashStaggeredAnimation extends StatelessWidget {
           child: Stack(
             alignment: Alignment.center,
             children: [
-              const Opacity(
-                opacity: 1,
+              Opacity(
+                opacity: staticStackOpacity.value,
                 child: Padding(
-                  padding: EdgeInsets.zero,
-                  child: SplashStaticStack(withCapybara: false),
+                  padding: staticStackPadding.value,
+                  child: const SplashStaticStack(withCapybara: false),
                 ),
               ),
               SizedBox(
